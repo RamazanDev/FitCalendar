@@ -13,8 +13,10 @@ final class MainCalendarAssembly {
         let view = MainCalendarVC()
         let router = MainCalendarRouter(view: view)
         let coreFactory = CompositionFactory.shared.core
+        let dataConverter = MainCalendarDataConverter()
         let presenter = MainCalendarPresenter(coreService: coreFactory,
-                                              router: router)
+                                              router: router,
+                                              dataProvider: dataConverter)
         
         view.presenter = presenter
         presenter.view = view

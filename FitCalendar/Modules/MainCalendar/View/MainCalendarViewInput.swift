@@ -7,5 +7,5 @@
 //
 
 protocol MainCalendarViewInput: class {
-    func setup(days: [DayModel])
+    func setup(viewModel: MainCalendarViewModel)
 }

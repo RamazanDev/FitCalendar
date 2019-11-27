@@ -21,26 +21,31 @@ final class MainCalendarVC: UIViewController {
     
     // MARK: - Private properties
     
-    private var days: [DayModel]?
+    private var viewModel: MainCalendarViewModel?
     
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectioView()
+        setupCollectionView()
         presenter?.viewIsReady()
     }
     
     // MARK: - Setup view funcs
     
-    private func setupCollectioView() {
+    private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         self.view.addSubview(collectionView)
+        
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(MainCalendarCell.self, forCellWithReuseIdentifier: "MainCalendarCell")
+        collectionView.register(MainCalendarCell.self,
+                                forCellWithReuseIdentifier: "MainCalendarCell")
+        collectionView.register(AddTraningDayCollectionCell.self,
+                                forCellWithReuseIdentifier: "AddTraningDayCollectionCell")
+        
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
@@ -60,12 +65,13 @@ extension MainCalendarVC: UICollectionViewDelegate {
 extension MainCalendarVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return days?.count ?? 0
+        return viewModel?.rows.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCalendarCell", for: indexPath) as? MainCalendarCell else {fatalError()}
-        cell.setup(with: days![indexPath.row])
+        guard let row = viewModel?.rows[indexPath.row] else {return UICollectionViewCell()}
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: row.identifier, for: indexPath)
+        row.configurator.configure(cell: cell)
         
         return cell
     }
@@ -78,14 +84,13 @@ extension MainCalendarVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let w = (self.view.frame.width)/2.3
-        let h = w * 650 / 375
         
-        return CGSize(width: w, height: h)
+        return CGSize(width: w, height: w)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 10
+        return 16
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -98,8 +103,8 @@ extension MainCalendarVC: UICollectionViewDelegateFlowLayout {
 // MARK: - MainCalendarViewInput
 
 extension MainCalendarVC: MainCalendarViewInput {
-    func setup(days: [DayModel]) {
-        self.days = days
+    func setup(viewModel: MainCalendarViewModel) {
+        self.viewModel = viewModel
         collectionView.reloadData()
     }
 }

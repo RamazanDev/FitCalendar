@@ -17,25 +17,19 @@ final class MainCalendarPresenter {
     
     private let coreService: CoreFactory
     private let router: MainCalendarRouterInput
+    private let dataProvider: MainCalendarDataConverterInput
     
     // MARK: - Init
     
-    init(coreService: CoreFactory, router: MainCalendarRouterInput) {
+    init(coreService: CoreFactory,
+         router: MainCalendarRouterInput,
+         dataProvider: MainCalendarDataConverterInput) {
         self.coreService = coreService
         self.router = router
+        self.dataProvider = dataProvider
     }
     
-    private func getDays() -> [DayModel] {
-        let dayModel = DayModel()
-        dayModel.date = Date()
-        for i in 0...5 {
-            var ex = ExerciseModel()
-            ex.name = "Трения \(i)"
-            dayModel.exercises.append(ex)
-        }
-        try! coreService.realm.write {
-            coreService.realm.add(dayModel)
-         }
+    private func getDaysFromRealm() -> [DayModel] {
         return Array(coreService.realm.objects(DayModel.self))
     }
     
@@ -45,6 +39,7 @@ final class MainCalendarPresenter {
 
 extension MainCalendarPresenter: MaincalendarViewOutput {
     func viewIsReady() {
-        view?.setup(days: getDays())
+        let viewModel = dataProvider.createView(currentDate: Date(), days: getDaysFromRealm().reversed())
+        view?.setup(viewModel: viewModel)
     }
 }

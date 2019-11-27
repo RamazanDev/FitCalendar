@@ -9,5 +9,6 @@ target 'FitCalendar' do
   pod 'SnapKit'
   pod 'RealmSwift'
   pod 'FieryCrucible'
+  pod 'lottie-ios'
 
 end
