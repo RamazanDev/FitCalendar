@@ -5,6 +5,7 @@
 //  Created by Магомедов Рамазан on 26.11.2019.
 //  Copyright © 2019 Магомедов Рамазан. All rights reserved.
 //
+
 import RealmSwift
 
 final class MainCalendarPresenter {
@@ -37,7 +38,16 @@ final class MainCalendarPresenter {
 
 // MARK: - MaincalendarViewOutput
 
-extension MainCalendarPresenter: MaincalendarViewOutput {
+extension MainCalendarPresenter: MainCalendarViewOutput {
+    func didSelectRow(rowType: MainCalendarViewModel.Row, index: Int) {
+        switch rowType {
+        case .addDay:
+            print("add")
+        case .simpleDay:
+            print("simple \(index)")
+        }
+    }
+    
     func viewIsReady() {
         let viewModel = dataProvider.createView(currentDate: Date(), days: getDaysFromRealm().reversed())
         view?.setup(viewModel: viewModel)

@@ -17,7 +17,7 @@ final class MainCalendarVC: UIViewController {
     
     // MARK: - Public properties
     
-    var presenter: MaincalendarViewOutput?
+    var presenter: MainCalendarViewOutput?
     
     // MARK: - Private properties
     
@@ -28,6 +28,9 @@ final class MainCalendarVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         presenter?.viewIsReady()
     }
     
@@ -36,6 +39,7 @@ final class MainCalendarVC: UIViewController {
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         self.view.addSubview(collectionView)
         
@@ -57,6 +61,8 @@ final class MainCalendarVC: UIViewController {
 
 extension MainCalendarVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        presenter?.didSelectRow(rowType: viewModel!.rows[indexPath.row], index: indexPath.row)
     }
 }
 

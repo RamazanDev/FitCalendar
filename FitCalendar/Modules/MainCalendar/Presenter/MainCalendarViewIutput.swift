@@ -6,6 +6,7 @@
 //  Copyright © 2019 Магомедов Рамазан. All rights reserved.
 //
 
-protocol MaincalendarViewOutput {
+protocol MainCalendarViewOutput {
     func viewIsReady()
+    func didSelectRow(rowType: MainCalendarViewModel.Row, index: Int)
 }

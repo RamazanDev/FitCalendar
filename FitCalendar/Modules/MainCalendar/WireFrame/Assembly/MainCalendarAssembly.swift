@@ -11,7 +11,7 @@ import UIKit
 final class MainCalendarAssembly {
     static func assembly() -> UIViewController {
         let view = MainCalendarVC()
-        let router = MainCalendarRouter(view: view)
+        let router = MainCalendarRouter(transition: view)
         let coreFactory = CompositionFactory.shared.core
         let dataConverter = MainCalendarDataConverter()
         let presenter = MainCalendarPresenter(coreService: coreFactory,

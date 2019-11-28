@@ -1,14 +1,14 @@
 //
-//  MainCalendarRouter.swift
+//  ProfileRouter.swift
 //  FitCalendar
 //
-//  Created by Магомедов Рамазан on 26.11.2019.
+//  Created by Магомедов Рамазан on 28.11.2019.
 //  Copyright © 2019 Магомедов Рамазан. All rights reserved.
 //
 
 import UIKit
 
-final class MainCalendarRouter {
+final class ProfileRouter {
     
     // MARK: - Private properties
     
@@ -22,8 +22,8 @@ final class MainCalendarRouter {
     
 }
 
-// MARK: - MainCalendarRouterInput
+// MARK: - ProfileRouterInput
 
-extension MainCalendarRouter: MainCalendarRouterInput {
+extension ProfileRouter: ProfileRouterInput {
     
 }
