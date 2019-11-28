@@ -25,5 +25,9 @@ final class MainCalendarRouter {
 // MARK: - MainCalendarRouterInput
 
 extension MainCalendarRouter: MainCalendarRouterInput {
+    func openNewDayModule() {
+        let vc = NewDayAssembly.assembly()
+        transition?.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }

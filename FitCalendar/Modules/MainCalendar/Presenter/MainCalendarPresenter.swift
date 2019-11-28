@@ -42,7 +42,7 @@ extension MainCalendarPresenter: MainCalendarViewOutput {
     func didSelectRow(rowType: MainCalendarViewModel.Row, index: Int) {
         switch rowType {
         case .addDay:
-            print("add")
+            router.openNewDayModule()
         case .simpleDay:
             print("simple \(index)")
         }

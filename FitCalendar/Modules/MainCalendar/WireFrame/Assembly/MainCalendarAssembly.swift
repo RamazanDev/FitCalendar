@@ -11,6 +11,9 @@ import UIKit
 final class MainCalendarAssembly {
     static func assembly() -> UIViewController {
         let view = MainCalendarVC()
+        let nav = UINavigationController()
+        nav.viewControllers = [view]
+        
         let router = MainCalendarRouter(transition: view)
         let coreFactory = CompositionFactory.shared.core
         let dataConverter = MainCalendarDataConverter()
@@ -20,13 +23,7 @@ final class MainCalendarAssembly {
         
         view.presenter = presenter
         presenter.view = view
-        
-        let date = Date()
-        view.title = date.stringValueFullWithTime()
-        let nav = UINavigationController()
-        let navBar = nav.navigationBar
-        navBar.prefersLargeTitles = true
-        nav.viewControllers = [view]
+
         
         return nav
     }

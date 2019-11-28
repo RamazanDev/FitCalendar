@@ -1,5 +1,5 @@
 //
-//  ProfileAssembly.swift
+//  NewDayAssembly.swift
 //  FitCalendar
 //
 //  Created by Магомедов Рамазан on 28.11.2019.
@@ -8,20 +8,20 @@
 
 import UIKit
 
-final class ProfileAssembly {
+final class NewDayAssembly {
     static func assembly() -> UIViewController {
-        let view = ProfileVC()
-        let router = ProfileRouter(transition: view)
-        let dataConverter = ProfileDataConverter()
-        let presenter = ProfilePresenter(dataProvider: dataConverter,
+        let view = NewDayVC()
+        
+        let router = NewDayRouter(transition: view)
+        let dataConverter = NewDayDataConverter()
+        let presenter = NewDayPresenter(dataProvider: dataConverter,
                                          router: router)
         
         view.presenter = presenter
         presenter.view = view
         
-        let nav = UINavigationController()
-        nav.viewControllers = [view]
+
         
-        return nav
+        return view
     }
 }

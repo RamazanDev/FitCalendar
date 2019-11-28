@@ -1,5 +1,5 @@
 //
-//  ProfileVC.swift
+//  NewDayVC.swift
 //  FitCalendar
 //
 //  Created by Магомедов Рамазан on 28.11.2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ProfileVC: UIViewController {
+final class NewDayVC: UIViewController {
     
     // MARK: - Views
     
@@ -16,11 +16,11 @@ final class ProfileVC: UIViewController {
     
     // MARK: - Public properties
     
-    var presenter: ProfileViewOutput?
+    var presenter: NewDayViewOutput?
     
     // MARK: - Private properties
     
-    private var viewModel: ProfileViewModel?
+    private var viewModel: NewDayViewModel?
     
     // MARK: - LifeCycle
     
@@ -35,13 +35,12 @@ final class ProfileVC: UIViewController {
     }
     
     // MARK: - Setup view funcs
-    
+
     
     private func setupView() {
-        self.title = "Профиль"
-        let nav = self.navigationController
-        let navBar = nav?.navigationBar
-        navBar?.prefersLargeTitles = true
+        self.view.backgroundColor = .black
+        self.title = "Новая тренировка"
+        self.navigationItem.backBarButtonItem?.title = ""
     }
     
     private func setupTableView() {
@@ -61,7 +60,7 @@ final class ProfileVC: UIViewController {
 
 // MARK: - UITableViewDataSource
 
-extension ProfileVC: UITableViewDataSource {
+extension NewDayVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return viewModel?.rows.count ?? 0
@@ -79,7 +78,7 @@ extension ProfileVC: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension ProfileVC: UITableViewDelegate {
+extension NewDayVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.didSelectRow(type: viewModel!.rows[indexPath.row])
@@ -89,8 +88,8 @@ extension ProfileVC: UITableViewDelegate {
 
 // MARK: - ProfileViewInput
 
-extension ProfileVC: ProfileViewInput {
-    func setup(viewModel: ProfileViewModel) {
+extension NewDayVC: NewDayViewInput {
+    func setup(viewModel: NewDayViewModel) {
         self.viewModel = viewModel
         tableView.reloadData()
     }

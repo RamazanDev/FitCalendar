@@ -27,6 +27,7 @@ final class MainCalendarVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         setupCollectionView()
     }
     
@@ -35,6 +36,13 @@ final class MainCalendarVC: UIViewController {
     }
     
     // MARK: - Setup view funcs
+    
+    private func setupView() {
+        let date = Date()
+        self.title = date.stringValueFullWithTime()
+        let navBar = navigationController?.navigationBar
+        navBar?.prefersLargeTitles = true
+    }
     
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
