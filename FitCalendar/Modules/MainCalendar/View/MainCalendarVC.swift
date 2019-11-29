@@ -39,7 +39,7 @@ final class MainCalendarVC: UIViewController {
     
     private func setupView() {
         let date = Date()
-        self.title = date.stringValueFullWithTime()
+        self.navigationItem.title = date.stringValueFullWithTime()
         let navBar = navigationController?.navigationBar
         navBar?.prefersLargeTitles = true
     }

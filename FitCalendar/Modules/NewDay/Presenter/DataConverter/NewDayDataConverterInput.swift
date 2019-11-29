@@ -7,5 +7,5 @@
 //
 
 protocol NewDayDataConverterInput {
-    func createView() -> NewDayViewModel
+    func createView(exercises: [ExerciseModel]) -> NewDayViewModel
 }

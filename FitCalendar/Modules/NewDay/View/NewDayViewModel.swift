@@ -12,6 +12,8 @@ struct NewDayViewModel {
     
     enum Row {
         
+        case exercise(CellConfigurator)
+        
         var identifier: String {
             return type(of: configurator).reuseId
         }
@@ -19,7 +21,7 @@ struct NewDayViewModel {
         var configurator: CellConfigurator {
             
             switch self {
-                
+            case .exercise(let config): return config
             }
             
         }

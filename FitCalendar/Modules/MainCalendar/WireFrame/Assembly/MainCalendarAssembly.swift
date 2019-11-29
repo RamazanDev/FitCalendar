@@ -24,7 +24,6 @@ final class MainCalendarAssembly {
         view.presenter = presenter
         presenter.view = view
 
-        
         return nav
     }
 }

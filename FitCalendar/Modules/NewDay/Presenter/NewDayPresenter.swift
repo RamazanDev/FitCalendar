@@ -29,13 +29,13 @@ final class NewDayPresenter {
 
 extension NewDayPresenter: NewDayViewOutput {
     func viewIsReady() {
-        let viewModel = dataProvider.createView()
+        let viewModel = dataProvider.createView(exercises: [])
         view?.setup(viewModel: viewModel)
     }
     
     func didSelectRow(type: NewDayViewModel.Row) {
         switch type {
-        default:
+        case .exercise:
             break
         }
     }

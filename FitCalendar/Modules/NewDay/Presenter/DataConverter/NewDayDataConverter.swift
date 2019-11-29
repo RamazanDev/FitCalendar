@@ -7,8 +7,15 @@
 //
 
 final class NewDayDataConverter: NewDayDataConverterInput {
-    func createView() -> NewDayViewModel {
+    
+    typealias exerciseCellConfig = TableCellConfigurator<TextWithArrowCell, TextWithArrowCell.Model>
+    
+    func createView(exercises: [ExerciseModel]) -> NewDayViewModel {
         var rows: [NewDayViewModel.Row] = []
+        
+        for exercise in exercises {
+            rows.append(.exercise(exerciseCellConfig(item: exercise.name)))
+        }
         
         return NewDayViewModel(rows: rows)
     }

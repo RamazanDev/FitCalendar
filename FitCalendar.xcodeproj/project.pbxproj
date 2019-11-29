@@ -58,6 +58,10 @@
 		4D5B7CAC23901893007039E7 /* NewDayAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B7CAB23901893007039E7 /* NewDayAssembly.swift */; };
 		4D5B7CAE239018A0007039E7 /* NewDayRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B7CAD239018A0007039E7 /* NewDayRouterInput.swift */; };
 		4D5B7CB0239018AA007039E7 /* NewDayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B7CAF239018AA007039E7 /* NewDayRouter.swift */; };
+		4D5B7CB7239025D0007039E7 /* TextWithArrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B7CB6239025D0007039E7 /* TextWithArrowCell.swift */; };
+		4D5B7CB923902D64007039E7 /* AddExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B7CB823902D64007039E7 /* AddExerciseCell.swift */; };
+		4D687A96239103DF000A1AFA /* KeyValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687A95239103DF000A1AFA /* KeyValueCell.swift */; };
+		4D687A9823910541000A1AFA /* KeyValueWithArrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687A9723910541000A1AFA /* KeyValueWithArrowCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +120,10 @@
 		4D5B7CAB23901893007039E7 /* NewDayAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayAssembly.swift; sourceTree = "<group>"; };
 		4D5B7CAD239018A0007039E7 /* NewDayRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayRouterInput.swift; sourceTree = "<group>"; };
 		4D5B7CAF239018AA007039E7 /* NewDayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayRouter.swift; sourceTree = "<group>"; };
+		4D5B7CB6239025D0007039E7 /* TextWithArrowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithArrowCell.swift; sourceTree = "<group>"; };
+		4D5B7CB823902D64007039E7 /* AddExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseCell.swift; sourceTree = "<group>"; };
+		4D687A95239103DF000A1AFA /* KeyValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueCell.swift; sourceTree = "<group>"; };
+		4D687A9723910541000A1AFA /* KeyValueWithArrowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueWithArrowCell.swift; sourceTree = "<group>"; };
 		7AE56E69ED4E96315A5854E6 /* Pods-FitCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitCalendar.release.xcconfig"; path = "Target Support Files/Pods-FitCalendar/Pods-FitCalendar.release.xcconfig"; sourceTree = "<group>"; };
 		7CD1F037A7EE54C092F7DB21 /* Pods-FitCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitCalendar.debug.xcconfig"; path = "Target Support Files/Pods-FitCalendar/Pods-FitCalendar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -272,6 +280,7 @@
 		4D5B7C35238D31BA007039E7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				4D5B7CB42390259D007039E7 /* SharedCells */,
 				4D5B7C54238E67AD007039E7 /* CellConfigurator */,
 				4D5B7C36238D31C0007039E7 /* CompositionFactory */,
 			);
@@ -509,6 +518,7 @@
 		4D5B7C9B239017AA007039E7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4D5B7CB323902580007039E7 /* AddExrecise */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -520,6 +530,48 @@
 				4D5B7CA523901865007039E7 /* NewDayDataConverter.swift */,
 			);
 			path = DataConverter;
+			sourceTree = "<group>";
+		};
+		4D5B7CB323902580007039E7 /* AddExrecise */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B7CB823902D64007039E7 /* AddExerciseCell.swift */,
+			);
+			path = AddExrecise;
+			sourceTree = "<group>";
+		};
+		4D5B7CB42390259D007039E7 /* SharedCells */ = {
+			isa = PBXGroup;
+			children = (
+				4D687A94239103AA000A1AFA /* KeyValueWithArrowCell */,
+				4D687A9323910393000A1AFA /* KeyValueCell */,
+				4D5B7CB5239025A4007039E7 /* TextWithArrowCell */,
+			);
+			path = SharedCells;
+			sourceTree = "<group>";
+		};
+		4D5B7CB5239025A4007039E7 /* TextWithArrowCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D5B7CB6239025D0007039E7 /* TextWithArrowCell.swift */,
+			);
+			path = TextWithArrowCell;
+			sourceTree = "<group>";
+		};
+		4D687A9323910393000A1AFA /* KeyValueCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D687A95239103DF000A1AFA /* KeyValueCell.swift */,
+			);
+			path = KeyValueCell;
+			sourceTree = "<group>";
+		};
+		4D687A94239103AA000A1AFA /* KeyValueWithArrowCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D687A9723910541000A1AFA /* KeyValueWithArrowCell.swift */,
+			);
+			path = KeyValueWithArrowCell;
 			sourceTree = "<group>";
 		};
 		83C3ED3A7E96046D5C23E781 /* Pods */ = {
@@ -648,6 +700,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D5B7CA823901875007039E7 /* NewDayPresenter.swift in Sources */,
+				4D5B7CB923902D64007039E7 /* AddExerciseCell.swift in Sources */,
 				4D5B7C9D239017C5007039E7 /* NewDayVC.swift in Sources */,
 				4D5B7CAA23901885007039E7 /* NewDayViewOutput.swift in Sources */,
 				4D5B7CA123901816007039E7 /* NewDayViewInput.swift in Sources */,
@@ -673,6 +726,7 @@
 				4D5B7C3B238D3572007039E7 /* CoreFactory.swift in Sources */,
 				4D5B7C99239010B0007039E7 /* ProfileAssembly.swift in Sources */,
 				4D5B7CAC23901893007039E7 /* NewDayAssembly.swift in Sources */,
+				4D687A96239103DF000A1AFA /* KeyValueCell.swift in Sources */,
 				4D5B7C58238E680B007039E7 /* Configurable.swift in Sources */,
 				4D5B7C53238E4C7C007039E7 /* MainCalendarSimpleTableCell.swift in Sources */,
 				4D5B7C9523900FE0007039E7 /* ProfileRouterInput.swift in Sources */,
@@ -685,10 +739,12 @@
 				4D5B7C5D238E6AB7007039E7 /* MainCalendarDataConverter.swift in Sources */,
 				4D5B7BCF238A4280007039E7 /* SceneDelegate.swift in Sources */,
 				4D5B7C21238B82F9007039E7 /* MainCalendarAssembly.swift in Sources */,
+				4D5B7CB7239025D0007039E7 /* TextWithArrowCell.swift in Sources */,
 				4D5B7C6E238EAFFD007039E7 /* MainTabBarAssembly.swift in Sources */,
 				4D5B7C9F23901802007039E7 /* NewDayViewModel.swift in Sources */,
 				4D5B7C15238A9C46007039E7 /* MainCalendarVC.swift in Sources */,
 				4D5B7CA42390185B007039E7 /* NewDayDataConverterInput.swift in Sources */,
+				4D687A9823910541000A1AFA /* KeyValueWithArrowCell.swift in Sources */,
 				4D5B7C3E238D39CC007039E7 /* DayModel.swift in Sources */,
 				4D5B7C8F23900F16007039E7 /* MainCalendarDataConverterInput.swift in Sources */,
 				4D5B7C5F238E6C64007039E7 /* MainCalendarViewModel.swift in Sources */,

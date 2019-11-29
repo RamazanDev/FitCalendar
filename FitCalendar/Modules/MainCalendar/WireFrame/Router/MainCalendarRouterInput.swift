@@ -8,5 +8,4 @@
 
 protocol MainCalendarRouterInput {
     func openNewDayModule()
-    
 }

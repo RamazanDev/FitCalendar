@@ -36,11 +36,9 @@ final class NewDayVC: UIViewController {
     
     // MARK: - Setup view funcs
 
-    
     private func setupView() {
         self.view.backgroundColor = .black
         self.title = "Новая тренировка"
-        self.navigationItem.backBarButtonItem?.title = ""
     }
     
     private func setupTableView() {
@@ -50,6 +48,7 @@ final class NewDayVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = .clear
+        tableView.register(TextWithArrowCell.self, forCellReuseIdentifier: "TextWithArrowCell")
         
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
