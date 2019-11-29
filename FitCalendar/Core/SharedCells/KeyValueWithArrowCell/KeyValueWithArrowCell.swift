@@ -81,7 +81,7 @@ extension KeyValueWithArrowCell: Configurable {
         let value: String
     }
     
-    func configure(with model: KeyValueCell.Model) {
+    func configure(with model: KeyValueWithArrowCell.Model) {
         self.keyLabel.text = model.key
         self.valueLabel.text = model.value
     }

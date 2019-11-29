@@ -14,8 +14,10 @@ final class NewDayAssembly {
         
         let router = NewDayRouter(transition: view)
         let dataConverter = NewDayDataConverter()
+        let coreService = CompositionFactory.shared.core
         let presenter = NewDayPresenter(dataProvider: dataConverter,
-                                         router: router)
+                                         router: router,
+                                         coreService: coreService)
         
         view.presenter = presenter
         presenter.view = view

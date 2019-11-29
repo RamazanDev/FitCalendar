@@ -13,14 +13,14 @@ final class AddExerciseCell: UITableViewCell {
     // MARK: - Views
     
     private var titleLabel: UILabel!
-    private var arrowImageView: UIImageView!
+    private var plusImageView: UIImageView!
     
     // MARK: - Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
-        setupArrowImageView()
+        setupPlusImageView()
         setupTitleLabel()
     }
     
@@ -34,19 +34,19 @@ final class AddExerciseCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    private func setupArrowImageView() {
-        arrowImageView = UIImageView(frame: .zero)
-        self.addSubview(arrowImageView)
+    private func setupPlusImageView() {
+        plusImageView = UIImageView(frame: .zero)
+        self.addSubview(plusImageView)
         
-        arrowImageView.image = #imageLiteral(resourceName: "nextArrow")
-        arrowImageView.tintColor = .white
-        arrowImageView.backgroundColor = .clear
+        plusImageView.image = #imageLiteral(resourceName: "plusIcon")
+        plusImageView.tintColor = .white
+        plusImageView.backgroundColor = .clear
         
-        arrowImageView.snp.makeConstraints { (make) in
-            make.right.equalToSuperview().offset(-16)
+        plusImageView.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(16)
             make.centerY.equalToSuperview()
-            make.height.equalTo(18)
-            make.width.equalTo(12)
+            make.height.equalTo(16)
+            make.width.equalTo(16)
         }
     }
     
@@ -54,7 +54,7 @@ final class AddExerciseCell: UITableViewCell {
         titleLabel = UILabel(frame: .zero)
         self.addSubview(titleLabel)
         
-        titleLabel.textColor = .white
+        titleLabel.textColor = .gray
         titleLabel.backgroundColor = .clear
         titleLabel.numberOfLines = 0
         titleLabel.font = titleLabel.font.withSize(16)
@@ -63,8 +63,8 @@ final class AddExerciseCell: UITableViewCell {
             make.top.equalToSuperview().offset(16)
             make.height.equalTo(20)
             make.bottom.equalToSuperview().offset(-16)
-            make.left.equalToSuperview().offset(16)
-            make.right.equalTo(arrowImageView).offset(8)
+            make.left.equalTo(plusImageView).offset(24)
+            make.right.equalToSuperview().offset(16)
         }
     }
     

@@ -12,9 +12,11 @@ final class DayModel: Object {
     @objc dynamic var date = Date()
     var exercises = List<ExerciseModel>()
     
-    convenience init(date: Date, exercises: List<ExerciseModel>) {
+    convenience init(date: Date, exercises: List<ExerciseModel>?) {
         self.init()
         self.date = date
-        self.exercises = exercises
+        if exercises != nil {
+        self.exercises = exercises!
+        }
     }
 }

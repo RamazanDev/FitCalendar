@@ -48,13 +48,14 @@ final class NewDayVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = .clear
+        tableView.tableFooterView = UIView()
         tableView.register(TextWithArrowCell.self, forCellReuseIdentifier: "TextWithArrowCell")
+        tableView.register(AddExerciseCell.self, forCellReuseIdentifier: "AddExerciseCell")
         
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
     }
-    
 }
 
 // MARK: - UITableViewDataSource
@@ -83,6 +84,20 @@ extension NewDayVC: UITableViewDelegate {
         presenter?.didSelectRow(type: viewModel!.rows[indexPath.row])
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        presenter?.removeExercise(with: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        let row = viewModel!.rows[indexPath.row]
+        switch row {
+        case .addExercise:
+            return .none
+        case .exercise:
+            return .delete
+        }
+    }
+    
 }
 
 // MARK: - ProfileViewInput
@@ -90,7 +105,27 @@ extension NewDayVC: UITableViewDelegate {
 extension NewDayVC: NewDayViewInput {
     func setup(viewModel: NewDayViewModel) {
         self.viewModel = viewModel
-        tableView.reloadData()
+        let range = NSMakeRange(0, self.tableView.numberOfSections)
+        let sections = NSIndexSet(indexesIn: range)
+        self.tableView.reloadSections(sections as IndexSet, with: .fade)
+    }
+    
+    func showAlertForInputExreciseName() {
+        let alert = UIAlertController.init(title: "Название упражнения", message: nil, preferredStyle: .alert)
+        alert.addTextField { (textField) in}
+        
+        let saveAction = UIAlertAction.init(title: "Добавить", style: .default) { (action) in
+            if let text = alert.textFields?.first?.text {
+                self.presenter?.addExercise(with: text)
+            }
+        }
+        
+        let cancelAction = UIAlertAction.init(title: "Назад", style: .destructive)
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        self.navigationController?.present(alert, animated: true, completion: nil)
     }
     
 }

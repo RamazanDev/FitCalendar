@@ -6,6 +6,8 @@
 //  Copyright © 2019 Магомедов Рамазан. All rights reserved.
 //
 
+import Foundation
+
 final class NewDayPresenter {
     
     // MARK: - Public properties
@@ -16,20 +18,46 @@ final class NewDayPresenter {
     
     private let dataProvider: NewDayDataConverterInput
     private let router: NewDayRouterInput
+    private let coreService: CoreFactory
+    private var model = DayModel(date: Date(), exercises: nil)
     
     // MARK: - Init
     
-    init(dataProvider: NewDayDataConverterInput, router: NewDayRouterInput) {
+    init(dataProvider: NewDayDataConverterInput, router: NewDayRouterInput, coreService: CoreFactory) {
         self.dataProvider = dataProvider
         self.router = router
+        self.coreService = coreService
+        addNewDayInRealm()
+    }
+    
+    private func addNewDayInRealm() {
+        try! coreService.realm.write {
+            coreService.realm.add(model)
+        }
     }
 }
 
 // MARK: - ProfileViewOutput
 
 extension NewDayPresenter: NewDayViewOutput {
+    func removeExercise(with id: Int) {
+        try! coreService.realm.write({
+            model.exercises.remove(at: id)
+        })
+        viewIsReady()
+    }
+    
+    func addExercise(with name: String) {
+        let exercise = ExerciseModel()
+        exercise.name = name
+        try! coreService.realm.write({
+            model.exercises.append(exercise)
+        })
+        viewIsReady()
+    }
+    
     func viewIsReady() {
-        let viewModel = dataProvider.createView(exercises: [])
+        let viewModel = dataProvider.createView(exercises: Array(model.exercises))
         view?.setup(viewModel: viewModel)
     }
     
@@ -37,6 +65,8 @@ extension NewDayPresenter: NewDayViewOutput {
         switch type {
         case .exercise:
             break
+        case .addExercise:
+            self.view?.showAlertForInputExreciseName()
         }
     }
 }

@@ -8,4 +8,5 @@
 
 protocol NewDayViewInput: class {
     func setup(viewModel: NewDayViewModel)
+    func showAlertForInputExreciseName()
 }
