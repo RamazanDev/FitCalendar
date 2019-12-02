@@ -26,4 +26,15 @@ final class NewDayRouter {
 
 extension NewDayRouter: NewDayRouterInput {
     
+    func exerciseInfoModule(items: [KeyValue], title: String) {
+        let vc = KeyValueVC()
+        vc.setup(items: items, title: title)
+        transition?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func openActiveExerciseModule(with primaryKey: String) {
+        let vc = ActiveExerciseAssembly.assembly(exercisePrimaryKey: primaryKey)
+        transition?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

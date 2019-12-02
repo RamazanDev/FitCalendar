@@ -61,10 +61,10 @@ extension NewDayPresenter: NewDayViewOutput {
         view?.setup(viewModel: viewModel)
     }
     
-    func didSelectRow(type: NewDayViewModel.Row) {
+    func didSelectRow(type: NewDayViewModel.Row, index: Int) {
         switch type {
         case .exercise:
-            break
+            router.openActiveExerciseModule(with: Array(model.exercises)[index].id)
         case .addExercise:
             self.view?.showAlertForInputExreciseName()
         }

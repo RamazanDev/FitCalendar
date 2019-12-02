@@ -7,5 +7,6 @@
 //
 
 protocol NewDayRouterInput {
-    
+    func exerciseInfoModule(items: [KeyValue], title: String)
+    func openActiveExerciseModule(with primaryKey: String)
 }

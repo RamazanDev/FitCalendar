@@ -30,6 +30,8 @@ final class MainCalendarPresenter {
         self.dataProvider = dataProvider
     }
     
+    // MARK: - Private funcs
+    
     private func getDaysFromRealm() -> [DayModel] {
         return Array(coreService.realm.objects(DayModel.self))
     }

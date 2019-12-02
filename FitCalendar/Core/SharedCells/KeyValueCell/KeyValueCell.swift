@@ -21,8 +21,8 @@ final class KeyValueCell: UITableViewCell {
      override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
+        setupKeyLabel()
         setupValueLabel()
-        setupTitleLabel()
     }
     
     required init?(coder: NSCoder) {
@@ -35,41 +35,7 @@ final class KeyValueCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    private func setupValueLabel() {
-        valueLabel = UILabel(frame: .zero)
-        self.addSubview(valueLabel)
-        
-        valueLabel.textColor = .white
-        valueLabel.backgroundColor = .clear
-        valueLabel.numberOfLines = 0
-        valueLabel.font = keyLabel.font.withSize(16)
-        
-        valueLabel.snp.makeConstraints { (make) in
-            make.centerX.equalTo(valueLabel)
-            make.height.equalTo(20)
-            make.right.equalTo(valueLabel).offset(-16)
-            make.left.greaterThanOrEqualTo(keyLabel).offset(8)
-        }
-        
-    }
-    
-    private func setupArrowImageView() {
-        arrowImageView = UIImageView(frame: .zero)
-        self.addSubview(arrowImageView)
-        
-        arrowImageView.image = #imageLiteral(resourceName: "nextArrow")
-        arrowImageView.tintColor = .white
-        arrowImageView.backgroundColor = .clear
-        
-        arrowImageView.snp.makeConstraints { (make) in
-            make.right.equalTo(arrowImageView).offset(-16)
-            make.centerY.equalToSuperview()
-            make.height.equalTo(18)
-            make.width.equalTo(12)
-        }
-    }
-    
-    private func setupTitleLabel() {
+    private func setupKeyLabel() {
         keyLabel = UILabel(frame: .zero)
         self.addSubview(keyLabel)
         
@@ -83,8 +49,26 @@ final class KeyValueCell: UITableViewCell {
             make.height.equalTo(20)
             make.bottom.equalToSuperview().offset(-16)
             make.left.equalToSuperview().offset(16)
-            make.right.equalTo(valueLabel).offset(8)
+            make.right.equalToSuperview().offset(-60)
         }
+    }
+    
+    private func setupValueLabel() {
+        valueLabel = UILabel(frame: .zero)
+        self.addSubview(valueLabel)
+        
+        valueLabel.textColor = .white
+        valueLabel.backgroundColor = .clear
+        valueLabel.numberOfLines = 0
+        valueLabel.font = valueLabel.font.withSize(16)
+        
+        valueLabel.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(16)
+            make.bottom.equalToSuperview().offset(-16)
+            make.centerX.equalTo(valueLabel)
+            make.right.equalToSuperview().offset(-16)
+        }
+        
     }
     
 }

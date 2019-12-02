@@ -63,6 +63,16 @@
 		4D687A96239103DF000A1AFA /* KeyValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687A95239103DF000A1AFA /* KeyValueCell.swift */; };
 		4D687A9823910541000A1AFA /* KeyValueWithArrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687A9723910541000A1AFA /* KeyValueWithArrowCell.swift */; };
 		4D687A9A239132CD000A1AFA /* UIBarButtomItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687A99239132CD000A1AFA /* UIBarButtomItemExtension.swift */; };
+		4D687AA3239141DC000A1AFA /* KeyValueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687AA2239141DC000A1AFA /* KeyValueVC.swift */; };
+		4D687AA6239142F8000A1AFA /* KeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687AA5239142F8000A1AFA /* KeyValue.swift */; };
+		4D687AAE23917E2E000A1AFA /* ActiveExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687AAD23917E2E000A1AFA /* ActiveExerciseVC.swift */; };
+		4D687AB023917E3C000A1AFA /* ActiveExerciseViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687AAF23917E3C000A1AFA /* ActiveExerciseViewInput.swift */; };
+		4D687AB223917E52000A1AFA /* ActiveExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687AB123917E52000A1AFA /* ActiveExercisePresenter.swift */; };
+		4D687AB423917E5F000A1AFA /* ActiveExerciseViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687AB323917E5F000A1AFA /* ActiveExerciseViewOutput.swift */; };
+		4D687AB623917FC5000A1AFA /* ActiveExerciseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687AB523917FC5000A1AFA /* ActiveExerciseAssembly.swift */; };
+		4D687ABA2393D1E8000A1AFA /* ActiveExerciseTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687AB92393D1E8000A1AFA /* ActiveExerciseTableDataSource.swift */; };
+		4D687ABC2393D383000A1AFA /* ActiveExerciseTableDataSourceOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687ABB2393D383000A1AFA /* ActiveExerciseTableDataSourceOutput.swift */; };
+		4D687ABE2393D640000A1AFA /* ActiveExerciseTableDataSourceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D687ABD2393D640000A1AFA /* ActiveExerciseTableDataSourceInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +136,16 @@
 		4D687A95239103DF000A1AFA /* KeyValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueCell.swift; sourceTree = "<group>"; };
 		4D687A9723910541000A1AFA /* KeyValueWithArrowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueWithArrowCell.swift; sourceTree = "<group>"; };
 		4D687A99239132CD000A1AFA /* UIBarButtomItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtomItemExtension.swift; sourceTree = "<group>"; };
+		4D687AA2239141DC000A1AFA /* KeyValueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueVC.swift; sourceTree = "<group>"; };
+		4D687AA5239142F8000A1AFA /* KeyValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValue.swift; sourceTree = "<group>"; };
+		4D687AAD23917E2E000A1AFA /* ActiveExerciseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveExerciseVC.swift; sourceTree = "<group>"; };
+		4D687AAF23917E3C000A1AFA /* ActiveExerciseViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveExerciseViewInput.swift; sourceTree = "<group>"; };
+		4D687AB123917E52000A1AFA /* ActiveExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveExercisePresenter.swift; sourceTree = "<group>"; };
+		4D687AB323917E5F000A1AFA /* ActiveExerciseViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveExerciseViewOutput.swift; sourceTree = "<group>"; };
+		4D687AB523917FC5000A1AFA /* ActiveExerciseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveExerciseAssembly.swift; sourceTree = "<group>"; };
+		4D687AB92393D1E8000A1AFA /* ActiveExerciseTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveExerciseTableDataSource.swift; sourceTree = "<group>"; };
+		4D687ABB2393D383000A1AFA /* ActiveExerciseTableDataSourceOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveExerciseTableDataSourceOutput.swift; sourceTree = "<group>"; };
+		4D687ABD2393D640000A1AFA /* ActiveExerciseTableDataSourceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveExerciseTableDataSourceInput.swift; sourceTree = "<group>"; };
 		7AE56E69ED4E96315A5854E6 /* Pods-FitCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitCalendar.release.xcconfig"; path = "Target Support Files/Pods-FitCalendar/Pods-FitCalendar.release.xcconfig"; sourceTree = "<group>"; };
 		7CD1F037A7EE54C092F7DB21 /* Pods-FitCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitCalendar.debug.xcconfig"; path = "Target Support Files/Pods-FitCalendar/Pods-FitCalendar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -283,6 +303,8 @@
 		4D5B7C35238D31BA007039E7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				4D687AA4239142E1000A1AFA /* CustomTypes */,
+				4D687A9C239140B9000A1AFA /* SharedScreens */,
 				4D5B7CB42390259D007039E7 /* SharedCells */,
 				4D5B7C54238E67AD007039E7 /* CellConfigurator */,
 				4D5B7C36238D31C0007039E7 /* CompositionFactory */,
@@ -354,6 +376,7 @@
 		4D5B7C60238E9C7B007039E7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4D687AA723917C93000A1AFA /* ActiveExercise */,
 				4D5B7C6B238EAFE2007039E7 /* MainTabBarController */,
 				4D5B7C0E238A9BFC007039E7 /* MainCalendar */,
 				4D5B7C7A23900B2B007039E7 /* Profile */,
@@ -577,6 +600,93 @@
 			path = KeyValueWithArrowCell;
 			sourceTree = "<group>";
 		};
+		4D687A9C239140B9000A1AFA /* SharedScreens */ = {
+			isa = PBXGroup;
+			children = (
+				4D687A9F23914101000A1AFA /* KeyValueTableView */,
+			);
+			path = SharedScreens;
+			sourceTree = "<group>";
+		};
+		4D687A9D239140CE000A1AFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D687AA2239141DC000A1AFA /* KeyValueVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D687A9F23914101000A1AFA /* KeyValueTableView */ = {
+			isa = PBXGroup;
+			children = (
+				4D687A9D239140CE000A1AFA /* View */,
+			);
+			path = KeyValueTableView;
+			sourceTree = "<group>";
+		};
+		4D687AA4239142E1000A1AFA /* CustomTypes */ = {
+			isa = PBXGroup;
+			children = (
+				4D687AA5239142F8000A1AFA /* KeyValue.swift */,
+			);
+			path = CustomTypes;
+			sourceTree = "<group>";
+		};
+		4D687AA723917C93000A1AFA /* ActiveExercise */ = {
+			isa = PBXGroup;
+			children = (
+				4D687AA823917DA5000A1AFA /* WireFrame */,
+				4D687AAA23917DB7000A1AFA /* Presenter */,
+				4D687AAB23917DC5000A1AFA /* View */,
+			);
+			path = ActiveExercise;
+			sourceTree = "<group>";
+		};
+		4D687AA823917DA5000A1AFA /* WireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				4D687AA923917DB1000A1AFA /* Assembly */,
+			);
+			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		4D687AA923917DB1000A1AFA /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				4D687AB523917FC5000A1AFA /* ActiveExerciseAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		4D687AAA23917DB7000A1AFA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4D687AB123917E52000A1AFA /* ActiveExercisePresenter.swift */,
+				4D687AB323917E5F000A1AFA /* ActiveExerciseViewOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4D687AAB23917DC5000A1AFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D687AB82393D007000A1AFA /* DataSource */,
+				4D687AAD23917E2E000A1AFA /* ActiveExerciseVC.swift */,
+				4D687AAF23917E3C000A1AFA /* ActiveExerciseViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D687AB82393D007000A1AFA /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				4D687AB92393D1E8000A1AFA /* ActiveExerciseTableDataSource.swift */,
+				4D687ABB2393D383000A1AFA /* ActiveExerciseTableDataSourceOutput.swift */,
+				4D687ABD2393D640000A1AFA /* ActiveExerciseTableDataSourceInput.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		83C3ED3A7E96046D5C23E781 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -705,21 +815,27 @@
 				4D5B7CA823901875007039E7 /* NewDayPresenter.swift in Sources */,
 				4D5B7CB923902D64007039E7 /* AddExerciseCell.swift in Sources */,
 				4D5B7C9D239017C5007039E7 /* NewDayVC.swift in Sources */,
+				4D687AB023917E3C000A1AFA /* ActiveExerciseViewInput.swift in Sources */,
 				4D5B7CAA23901885007039E7 /* NewDayViewOutput.swift in Sources */,
 				4D687A9A239132CD000A1AFA /* UIBarButtomItemExtension.swift in Sources */,
 				4D5B7CA123901816007039E7 /* NewDayViewInput.swift in Sources */,
 				4D5B7C5A238E682A007039E7 /* CollectionCellConfigurator.swift in Sources */,
 				4D5B7C26238D199A007039E7 /* StringExtensions.swift in Sources */,
+				4D687ABE2393D640000A1AFA /* ActiveExerciseTableDataSourceInput.swift in Sources */,
 				4D5B7C70238EB00A007039E7 /* MainTabBarController.swift in Sources */,
 				4D5B7C24238C715E007039E7 /* DateExtensions.swift in Sources */,
 				4D5B7CB0239018AA007039E7 /* NewDayRouter.swift in Sources */,
+				4D687ABC2393D383000A1AFA /* ActiveExerciseTableDataSourceOutput.swift in Sources */,
 				4D5B7CAE239018A0007039E7 /* NewDayRouterInput.swift in Sources */,
+				4D687AB623917FC5000A1AFA /* ActiveExerciseAssembly.swift in Sources */,
 				4D5B7C8423900C67007039E7 /* ProfileViewInput.swift in Sources */,
 				4D5B7C8B23900E0D007039E7 /* ProfileViewOutput.swift in Sources */,
 				4D5B7C18238A9C5C007039E7 /* MainCalendarCell.swift in Sources */,
 				4D5B7C8623900C80007039E7 /* ProfileViewModel.swift in Sources */,
+				4D687AAE23917E2E000A1AFA /* ActiveExerciseVC.swift in Sources */,
 				4D5B7C38238D31D3007039E7 /* CompositionFactory.swift in Sources */,
 				4D5B7C46238D8BA5007039E7 /* MainCalendarViewIutput.swift in Sources */,
+				4D687AB223917E52000A1AFA /* ActiveExercisePresenter.swift in Sources */,
 				4D5B7C42238D8ABB007039E7 /* MainCalendarViewInput.swift in Sources */,
 				4D5B7C8223900C59007039E7 /* ProfileVC.swift in Sources */,
 				4D5B7BCD238A4280007039E7 /* AppDelegate.swift in Sources */,
@@ -741,10 +857,13 @@
 				4D5B7C40238D3ABF007039E7 /* ExerciseModel.swift in Sources */,
 				4D5B7C8923900DE8007039E7 /* ProfilePresenter.swift in Sources */,
 				4D5B7C5D238E6AB7007039E7 /* MainCalendarDataConverter.swift in Sources */,
+				4D687AA6239142F8000A1AFA /* KeyValue.swift in Sources */,
 				4D5B7BCF238A4280007039E7 /* SceneDelegate.swift in Sources */,
 				4D5B7C21238B82F9007039E7 /* MainCalendarAssembly.swift in Sources */,
+				4D687AB423917E5F000A1AFA /* ActiveExerciseViewOutput.swift in Sources */,
 				4D5B7CB7239025D0007039E7 /* TextWithArrowCell.swift in Sources */,
 				4D5B7C6E238EAFFD007039E7 /* MainTabBarAssembly.swift in Sources */,
+				4D687ABA2393D1E8000A1AFA /* ActiveExerciseTableDataSource.swift in Sources */,
 				4D5B7C9F23901802007039E7 /* NewDayViewModel.swift in Sources */,
 				4D5B7C15238A9C46007039E7 /* MainCalendarVC.swift in Sources */,
 				4D5B7CA42390185B007039E7 /* NewDayDataConverterInput.swift in Sources */,
@@ -752,6 +871,7 @@
 				4D5B7C3E238D39CC007039E7 /* DayModel.swift in Sources */,
 				4D5B7C8F23900F16007039E7 /* MainCalendarDataConverterInput.swift in Sources */,
 				4D5B7C5F238E6C64007039E7 /* MainCalendarViewModel.swift in Sources */,
+				4D687AA3239141DC000A1AFA /* KeyValueVC.swift in Sources */,
 				4D5B7C9723901006007039E7 /* ProfileRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

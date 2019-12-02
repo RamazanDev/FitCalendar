@@ -39,9 +39,7 @@ final class ProfileVC: UIViewController {
     
     private func setupView() {
         self.title = "Профиль"
-        let nav = self.navigationController
-        let navBar = nav?.navigationBar
-        navBar?.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .always
     }
     
     private func setupTableView() {

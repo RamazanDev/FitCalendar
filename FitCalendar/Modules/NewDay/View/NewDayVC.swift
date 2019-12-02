@@ -39,6 +39,7 @@ final class NewDayVC: UIViewController {
     private func setupView() {
         self.view.backgroundColor = .black
         self.title = "Новая тренировка"
+        self.navigationItem.largeTitleDisplayMode = .always
     }
     
     private func setupTableView() {
@@ -81,7 +82,7 @@ extension NewDayVC: UITableViewDataSource {
 extension NewDayVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.didSelectRow(type: viewModel!.rows[indexPath.row])
+        presenter?.didSelectRow(type: viewModel!.rows[indexPath.row], index: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -98,11 +99,16 @@ extension NewDayVC: UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Удалить"
+    }
+    
 }
 
 // MARK: - ProfileViewInput
 
 extension NewDayVC: NewDayViewInput {
+    
     func setup(viewModel: NewDayViewModel) {
         self.viewModel = viewModel
         let range = NSMakeRange(0, self.tableView.numberOfSections)
@@ -116,7 +122,9 @@ extension NewDayVC: NewDayViewInput {
         
         let saveAction = UIAlertAction.init(title: "Добавить", style: .default) { (action) in
             if let text = alert.textFields?.first?.text {
-                self.presenter?.addExercise(with: text)
+                if text != "" {
+                    self.presenter?.addExercise(with: text.capitalizingFirstLetter())
+                }
             }
         }
         
@@ -125,7 +133,7 @@ extension NewDayVC: NewDayViewInput {
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
         
-        self.navigationController?.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
