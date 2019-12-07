@@ -9,4 +9,6 @@
 protocol ActiveExerciseViewOutput {
     func viewIsReady()
     func addRepetition(weight: Float, count: Int)
+    func weightIsClicked()
+    func countIsClicked()
 }

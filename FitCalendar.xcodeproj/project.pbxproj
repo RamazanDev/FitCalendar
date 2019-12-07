@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		07722C3C795669DA92F144E1 /* Pods_FitCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E5803477E60A39985C8840 /* Pods_FitCalendar.framework */; };
+		4D392D74239B948E00521B5E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392D73239B948E00521B5E /* UIViewExtensions.swift */; };
+		4D392D76239B9ECD00521B5E /* FloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392D75239B9ECC00521B5E /* FloatExtensions.swift */; };
+		4D392D78239BACE700521B5E /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392D77239BACE600521B5E /* UITableViewExtensions.swift */; };
+		4D392D7B239BD82000521B5E /* PickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392D7A239BD82000521B5E /* PickerVC.swift */; };
+		4D392D7D239BD83900521B5E /* PickerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392D7C239BD83900521B5E /* PickerOutput.swift */; };
+		4D392D82239BEBDA00521B5E /* ActiveExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392D81239BEBDA00521B5E /* ActiveExerciseRouter.swift */; };
+		4D392D86239BEC3D00521B5E /* ActiveExerciseRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392D85239BEC3D00521B5E /* ActiveExerciseRouterInput.swift */; };
+		4D392D89239BEDBC00521B5E /* PickerContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392D88239BEDBC00521B5E /* PickerContentType.swift */; };
 		4D5B7BCD238A4280007039E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B7BCC238A4280007039E7 /* AppDelegate.swift */; };
 		4D5B7BCF238A4280007039E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B7BCE238A4280007039E7 /* SceneDelegate.swift */; };
 		4D5B7BD4238A4280007039E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B7BD2238A4280007039E7 /* Main.storyboard */; };
@@ -77,6 +85,14 @@
 
 /* Begin PBXFileReference section */
 		41E5803477E60A39985C8840 /* Pods_FitCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D392D73239B948E00521B5E /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		4D392D75239B9ECC00521B5E /* FloatExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtensions.swift; sourceTree = "<group>"; };
+		4D392D77239BACE600521B5E /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
+		4D392D7A239BD82000521B5E /* PickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerVC.swift; sourceTree = "<group>"; };
+		4D392D7C239BD83900521B5E /* PickerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerOutput.swift; sourceTree = "<group>"; };
+		4D392D81239BEBDA00521B5E /* ActiveExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveExerciseRouter.swift; sourceTree = "<group>"; };
+		4D392D85239BEC3D00521B5E /* ActiveExerciseRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveExerciseRouterInput.swift; sourceTree = "<group>"; };
+		4D392D88239BEDBC00521B5E /* PickerContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerContentType.swift; sourceTree = "<group>"; };
 		4D5B7BC9238A4280007039E7 /* FitCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D5B7BCC238A4280007039E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D5B7BCE238A4280007039E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +186,32 @@
 				41E5803477E60A39985C8840 /* Pods_FitCalendar.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D392D79239BD7B400521B5E /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				4D392D7A239BD82000521B5E /* PickerVC.swift */,
+				4D392D7C239BD83900521B5E /* PickerOutput.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		4D392D7E239BEB8400521B5E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4D392D85239BEC3D00521B5E /* ActiveExerciseRouterInput.swift */,
+				4D392D81239BEBDA00521B5E /* ActiveExerciseRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4D392D87239BEDAB00521B5E /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				4D392D88239BEDBC00521B5E /* PickerContentType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		4D5B7BC0238A4280007039E7 = {
@@ -276,6 +318,7 @@
 		4D5B7C1E238AACAC007039E7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				4D392D87239BEDAB00521B5E /* Enums */,
 				4D5B7C22238C714A007039E7 /* Extensions */,
 			);
 			path = Helpers;
@@ -287,6 +330,9 @@
 				4D5B7C23238C715E007039E7 /* DateExtensions.swift */,
 				4D5B7C25238D199A007039E7 /* StringExtensions.swift */,
 				4D687A99239132CD000A1AFA /* UIBarButtomItemExtension.swift */,
+				4D392D73239B948E00521B5E /* UIViewExtensions.swift */,
+				4D392D75239B9ECC00521B5E /* FloatExtensions.swift */,
+				4D392D77239BACE600521B5E /* UITableViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -303,6 +349,7 @@
 		4D5B7C35238D31BA007039E7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				4D392D79239BD7B400521B5E /* Picker */,
 				4D687AA4239142E1000A1AFA /* CustomTypes */,
 				4D687A9C239140B9000A1AFA /* SharedScreens */,
 				4D5B7CB42390259D007039E7 /* SharedCells */,
@@ -645,6 +692,7 @@
 		4D687AA823917DA5000A1AFA /* WireFrame */ = {
 			isa = PBXGroup;
 			children = (
+				4D392D7E239BEB8400521B5E /* Router */,
 				4D687AA923917DB1000A1AFA /* Assembly */,
 			);
 			path = WireFrame;
@@ -819,15 +867,19 @@
 				4D5B7CAA23901885007039E7 /* NewDayViewOutput.swift in Sources */,
 				4D687A9A239132CD000A1AFA /* UIBarButtomItemExtension.swift in Sources */,
 				4D5B7CA123901816007039E7 /* NewDayViewInput.swift in Sources */,
+				4D392D78239BACE700521B5E /* UITableViewExtensions.swift in Sources */,
 				4D5B7C5A238E682A007039E7 /* CollectionCellConfigurator.swift in Sources */,
 				4D5B7C26238D199A007039E7 /* StringExtensions.swift in Sources */,
+				4D392D89239BEDBC00521B5E /* PickerContentType.swift in Sources */,
 				4D687ABE2393D640000A1AFA /* ActiveExerciseTableDataSourceInput.swift in Sources */,
 				4D5B7C70238EB00A007039E7 /* MainTabBarController.swift in Sources */,
 				4D5B7C24238C715E007039E7 /* DateExtensions.swift in Sources */,
 				4D5B7CB0239018AA007039E7 /* NewDayRouter.swift in Sources */,
 				4D687ABC2393D383000A1AFA /* ActiveExerciseTableDataSourceOutput.swift in Sources */,
+				4D392D7B239BD82000521B5E /* PickerVC.swift in Sources */,
 				4D5B7CAE239018A0007039E7 /* NewDayRouterInput.swift in Sources */,
 				4D687AB623917FC5000A1AFA /* ActiveExerciseAssembly.swift in Sources */,
+				4D392D82239BEBDA00521B5E /* ActiveExerciseRouter.swift in Sources */,
 				4D5B7C8423900C67007039E7 /* ProfileViewInput.swift in Sources */,
 				4D5B7C8B23900E0D007039E7 /* ProfileViewOutput.swift in Sources */,
 				4D5B7C18238A9C5C007039E7 /* MainCalendarCell.swift in Sources */,
@@ -836,8 +888,11 @@
 				4D5B7C38238D31D3007039E7 /* CompositionFactory.swift in Sources */,
 				4D5B7C46238D8BA5007039E7 /* MainCalendarViewIutput.swift in Sources */,
 				4D687AB223917E52000A1AFA /* ActiveExercisePresenter.swift in Sources */,
+				4D392D86239BEC3D00521B5E /* ActiveExerciseRouterInput.swift in Sources */,
+				4D392D7D239BD83900521B5E /* PickerOutput.swift in Sources */,
 				4D5B7C42238D8ABB007039E7 /* MainCalendarViewInput.swift in Sources */,
 				4D5B7C8223900C59007039E7 /* ProfileVC.swift in Sources */,
+				4D392D74239B948E00521B5E /* UIViewExtensions.swift in Sources */,
 				4D5B7BCD238A4280007039E7 /* AppDelegate.swift in Sources */,
 				4D5B7C9123900F5D007039E7 /* ProfileDataConverterInput.swift in Sources */,
 				4D5B7CA623901865007039E7 /* NewDayDataConverter.swift in Sources */,
@@ -849,6 +904,7 @@
 				4D687A96239103DF000A1AFA /* KeyValueCell.swift in Sources */,
 				4D5B7C58238E680B007039E7 /* Configurable.swift in Sources */,
 				4D5B7C53238E4C7C007039E7 /* MainCalendarSimpleTableCell.swift in Sources */,
+				4D392D76239B9ECD00521B5E /* FloatExtensions.swift in Sources */,
 				4D5B7C9523900FE0007039E7 /* ProfileRouterInput.swift in Sources */,
 				4D5B7C4A238D8BC1007039E7 /* MainCalendarRouterInput.swift in Sources */,
 				4D5B7C48238D8BB4007039E7 /* MainCalendarRouter.swift in Sources */,

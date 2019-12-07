@@ -30,7 +30,7 @@ final class ExrciceResultModel: Object {
 
 final class ExerciseRepetitionModel: Object {
     @objc dynamic var id = UUID().uuidString
-    @objc dynamic var phase: Int = 0
+    @objc dynamic var phase: Int = 1
     @objc dynamic var count: Int = 0
     @objc dynamic var weight: Float = 0.0
     

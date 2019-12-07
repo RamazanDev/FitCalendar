@@ -13,7 +13,8 @@ final class ActiveExerciseAssembly {
         let vc = ActiveExerciseVC()
         let dataSource = ActiveExerciseTableDataSource()
         let coreService = CompositionFactory.shared.core
-        let presenter = ActiveExercisePresenter(coreService: coreService, dataSource: dataSource, primaryKey: exercisePrimaryKey)
+        let router = ActiveExerciseRouter(transition: vc)
+        let presenter = ActiveExercisePresenter(coreService: coreService, dataSource: dataSource, router: router, primaryKey: exercisePrimaryKey)
         
         dataSource.delegate = presenter
         

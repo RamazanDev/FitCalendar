@@ -8,4 +8,6 @@
 
 protocol ActiveExerciseViewInput: class {
     func setTitleView(_ title: String)
+    func setWeight(weight: Float)
+    func setCount(count: Int)
 }

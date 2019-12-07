@@ -32,7 +32,7 @@ extension ActiveExerciseTableDataSource: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "KeyValueCell", for: indexPath) as? KeyValueCell else {return UITableViewCell()}
         
         let repet = repetitions[indexPath.row]
-        let key = "\(repet.phase). \(repet.weight)"
+        let key = "\(repet.phase). \(repet.weight.preparingForShowIntOrFloatDescription())"
 
         cell.configure(with: KeyValueCell.Model(key: key, value: repet.count.description))
         
@@ -53,6 +53,7 @@ extension ActiveExerciseTableDataSource: ActiveExerciseTableDataSourceInput {
     func reload(repetitions: [ExerciseRepetitionModel]) {
         self.repetitions = repetitions
         tableView?.reloadData()
+        tableView?.scrollToBottom()
     }
     
 }

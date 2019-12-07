@@ -14,4 +14,15 @@ extension String {
     mutating func capitalizeFirstLetter() {
         self = self.capitalizingFirstLetter()
     }
+    
+}
+
+extension RangeReplaceableCollection where Self: StringProtocol {
+    var digits: Self {
+        return filter({ $0.isNumber })
+    }
+    
+    mutating func removeAllNonNumeric() {
+        removeAll { !$0.isNumber }
+    }
 }
