@@ -20,6 +20,7 @@ final class MainCalendarVC: UIViewController {
     var presenter: MainCalendarViewOutput?
     
     // MARK: - Private properties
+    private var selectedCell: UICollectionViewCell!
     
     private var viewModel: MainCalendarViewModel?
     
@@ -38,8 +39,11 @@ final class MainCalendarVC: UIViewController {
     // MARK: - Setup view funcs
     
     private func setupView() {
+        self.navigationController?.delegate = self
+        
         let date = Date()
         self.title = date.stringValueFullWithTime()
+        
         let navBar = navigationController?.navigationBar
         navBar?.prefersLargeTitles = true
     }
@@ -69,8 +73,9 @@ final class MainCalendarVC: UIViewController {
 
 extension MainCalendarVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        presenter?.didSelectRow(rowType: viewModel!.rows[indexPath.row], index: indexPath.row)
+        guard let row = viewModel?.rows[indexPath.row] else {return }
+        selectedCell = collectionView.dequeueReusableCell(withReuseIdentifier: row.identifier, for: indexPath)
+        self.presenter?.didSelectRow(rowType: self.viewModel!.rows[indexPath.row], index: indexPath.row)
     }
 }
 
@@ -112,6 +117,19 @@ extension MainCalendarVC: UICollectionViewDelegateFlowLayout {
         return 10
     }
     
+}
+
+// MARK: - UINavigationControllerDelegate
+
+extension MainCalendarVC: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        switch operation {
+        case .push:
+            return CollectionViewCellTransitionAnimator(startTransitionCell: selectedCell)
+        default:
+            return nil
+        }
+    }
 }
 
 // MARK: - MainCalendarViewInput

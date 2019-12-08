@@ -47,6 +47,7 @@ extension MainCalendarPresenter: MainCalendarViewOutput {
             router.openNewDayModule()
         case .simpleDay:
             print("simple \(index)")
+            router.openNewDayModule()
         }
     }
     
