@@ -61,7 +61,7 @@ final class ActiveExerciseVC: UIViewController {
     private func setupWeightView() {
         weightView = UIView(frame: .zero)
         weightView.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
-        weightView.corner(weightView, angle: 50)
+        weightView.corner(angle: 50)
         weightView.layer.borderWidth = 0.5
         weightView.layer.borderColor = #colorLiteral(red: 0, green: 1, blue: 0.6078431373, alpha: 1)
         
@@ -101,7 +101,7 @@ final class ActiveExerciseVC: UIViewController {
         countView = UIView(frame: .zero)
         countView.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
         
-        countView.corner(countView, angle: 50)
+        countView.corner(angle: 50)
         countView.layer.borderWidth = 0.5
         countView.layer.borderColor = #colorLiteral(red: 0, green: 1, blue: 0.6078431373, alpha: 1)
         
@@ -173,7 +173,7 @@ final class ActiveExerciseVC: UIViewController {
         addRepetButton.setTitleColor(#colorLiteral(red: 0, green: 1, blue: 0.6078431373, alpha: 1), for: .normal)
         addRepetButton.titleLabel?.font = addRepetButton.titleLabel?.font.withSize(16)
         addRepetButton.addTarget(self, action: #selector(addReppetButtonIsClicked), for: .touchUpInside)
-        exerciseCreateView.corner(addRepetButton, angle: 8)
+        addRepetButton.corner(angle: 8)
         
         exerciseCreateView.addSubview(addRepetButton)
         

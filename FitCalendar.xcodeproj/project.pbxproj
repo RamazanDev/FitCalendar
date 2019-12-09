@@ -17,6 +17,8 @@
 		4D392D86239BEC3D00521B5E /* ActiveExerciseRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392D85239BEC3D00521B5E /* ActiveExerciseRouterInput.swift */; };
 		4D392D89239BEDBC00521B5E /* PickerContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392D88239BEDBC00521B5E /* PickerContentType.swift */; };
 		4D392D8D239D34AC00521B5E /* CollectionViewCellTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392D8C239D34AC00521B5E /* CollectionViewCellTransitionAnimator.swift */; };
+		4D392D9B239E6B0000521B5E /* SeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392D9A239E6B0000521B5E /* SeparatorTableViewCell.swift */; };
+		4D392D9E239E724500521B5E /* ProfileUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392D9D239E724500521B5E /* ProfileUserInfoCell.swift */; };
 		4D5B7BCD238A4280007039E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B7BCC238A4280007039E7 /* AppDelegate.swift */; };
 		4D5B7BCF238A4280007039E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B7BCE238A4280007039E7 /* SceneDelegate.swift */; };
 		4D5B7BD4238A4280007039E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B7BD2238A4280007039E7 /* Main.storyboard */; };
@@ -95,6 +97,8 @@
 		4D392D85239BEC3D00521B5E /* ActiveExerciseRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveExerciseRouterInput.swift; sourceTree = "<group>"; };
 		4D392D88239BEDBC00521B5E /* PickerContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerContentType.swift; sourceTree = "<group>"; };
 		4D392D8C239D34AC00521B5E /* CollectionViewCellTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellTransitionAnimator.swift; sourceTree = "<group>"; };
+		4D392D9A239E6B0000521B5E /* SeparatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorTableViewCell.swift; sourceTree = "<group>"; };
+		4D392D9D239E724500521B5E /* ProfileUserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserInfoCell.swift; sourceTree = "<group>"; };
 		4D5B7BC9238A4280007039E7 /* FitCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D5B7BCC238A4280007039E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D5B7BCE238A4280007039E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +226,92 @@
 				4D392D8C239D34AC00521B5E /* CollectionViewCellTransitionAnimator.swift */,
 			);
 			path = Transitions;
+			sourceTree = "<group>";
+		};
+		4D392D8F239D7BB800521B5E /* AllExercises */ = {
+			isa = PBXGroup;
+			children = (
+				4D392D92239D7BE200521B5E /* WireFrame */,
+				4D392D91239D7BDC00521B5E /* Presenter */,
+				4D392D90239D7BCC00521B5E /* View */,
+			);
+			path = AllExercises;
+			sourceTree = "<group>";
+		};
+		4D392D90239D7BCC00521B5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D392D91239D7BDC00521B5E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4D392D92239D7BE200521B5E /* WireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				4D392D93239D7BE800521B5E /* Assembly */,
+				4D392D94239D7BF000521B5E /* Router */,
+			);
+			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		4D392D93239D7BE800521B5E /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		4D392D94239D7BF000521B5E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4D392D95239E5F3000521B5E /* MuscleGroups */ = {
+			isa = PBXGroup;
+			children = (
+				4D392D97239E5F4100521B5E /* Presenter */,
+				4D392D96239E5F3C00521B5E /* View */,
+			);
+			path = MuscleGroups;
+			sourceTree = "<group>";
+		};
+		4D392D96239E5F3C00521B5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D392D97239E5F4100521B5E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4D392D99239E6ADB00521B5E /* SeparatorCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D392D9A239E6B0000521B5E /* SeparatorTableViewCell.swift */,
+			);
+			path = SeparatorCell;
+			sourceTree = "<group>";
+		};
+		4D392D9C239E722700521B5E /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				4D392D9D239E724500521B5E /* ProfileUserInfoCell.swift */,
+			);
+			path = UserInfo;
 			sourceTree = "<group>";
 		};
 		4D5B7BC0238A4280007039E7 = {
@@ -434,11 +524,13 @@
 		4D5B7C60238E9C7B007039E7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4D392D95239E5F3000521B5E /* MuscleGroups */,
+				4D392D8F239D7BB800521B5E /* AllExercises */,
 				4D687AA723917C93000A1AFA /* ActiveExercise */,
 				4D5B7C6B238EAFE2007039E7 /* MainTabBarController */,
 				4D5B7C0E238A9BFC007039E7 /* MainCalendar */,
-				4D5B7C7A23900B2B007039E7 /* Profile */,
 				4D5B7C65238EAF08007039E7 /* NewDay */,
+				4D5B7C7A23900B2B007039E7 /* Profile */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -595,6 +687,7 @@
 		4D5B7C8723900C93007039E7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4D392D9C239E722700521B5E /* UserInfo */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -627,6 +720,7 @@
 		4D5B7CB42390259D007039E7 /* SharedCells */ = {
 			isa = PBXGroup;
 			children = (
+				4D392D99239E6ADB00521B5E /* SeparatorCell */,
 				4D687A94239103AA000A1AFA /* KeyValueWithArrowCell */,
 				4D687A9323910393000A1AFA /* KeyValueCell */,
 				4D5B7CB5239025A4007039E7 /* TextWithArrowCell */,
@@ -887,6 +981,7 @@
 				4D5B7C24238C715E007039E7 /* DateExtensions.swift in Sources */,
 				4D5B7CB0239018AA007039E7 /* NewDayRouter.swift in Sources */,
 				4D687ABC2393D383000A1AFA /* ActiveExerciseTableDataSourceOutput.swift in Sources */,
+				4D392D9E239E724500521B5E /* ProfileUserInfoCell.swift in Sources */,
 				4D392D7B239BD82000521B5E /* PickerVC.swift in Sources */,
 				4D5B7CAE239018A0007039E7 /* NewDayRouterInput.swift in Sources */,
 				4D687AB623917FC5000A1AFA /* ActiveExerciseAssembly.swift in Sources */,
@@ -895,6 +990,7 @@
 				4D5B7C8B23900E0D007039E7 /* ProfileViewOutput.swift in Sources */,
 				4D5B7C18238A9C5C007039E7 /* MainCalendarCell.swift in Sources */,
 				4D5B7C8623900C80007039E7 /* ProfileViewModel.swift in Sources */,
+				4D392D9B239E6B0000521B5E /* SeparatorTableViewCell.swift in Sources */,
 				4D687AAE23917E2E000A1AFA /* ActiveExerciseVC.swift in Sources */,
 				4D5B7C38238D31D3007039E7 /* CompositionFactory.swift in Sources */,
 				4D5B7C46238D8BA5007039E7 /* MainCalendarViewIutput.swift in Sources */,

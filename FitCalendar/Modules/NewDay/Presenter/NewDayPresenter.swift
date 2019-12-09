@@ -19,7 +19,7 @@ final class NewDayPresenter {
     private let dataProvider: NewDayDataConverterInput
     private let router: NewDayRouterInput
     private let coreService: CoreFactory
-    private var model = DayModel(date: Date(), exercises: nil)
+    private var model: DayModel?
     
     // MARK: - Init
     
@@ -27,12 +27,13 @@ final class NewDayPresenter {
         self.dataProvider = dataProvider
         self.router = router
         self.coreService = coreService
-        addNewDayInRealm()
     }
     
     private func addNewDayInRealm() {
+        model = DayModel(date: Date(), exercises: nil)
+        
         try! coreService.realm.write {
-            coreService.realm.add(model)
+            coreService.realm.add(model!)
         }
     }
 }
@@ -42,29 +43,42 @@ final class NewDayPresenter {
 extension NewDayPresenter: NewDayViewOutput {
     func removeExercise(with id: Int) {
         try! coreService.realm.write({
-            model.exercises.remove(at: id)
+            model!.exercises.remove(at: id)
         })
+        
         viewIsReady()
     }
     
     func addExercise(with name: String) {
+        if model == nil {
+            addNewDayInRealm()
+        }
+        
         let exercise = ExerciseModel()
         exercise.name = name
+        
         try! coreService.realm.write({
-            model.exercises.append(exercise)
+            model!.exercises.append(exercise)
         })
+        
         viewIsReady()
     }
     
     func viewIsReady() {
-        let viewModel = dataProvider.createView(exercises: Array(model.exercises))
+        var exercises: [ExerciseModel] = []
+        
+        if let model = model {
+            exercises = Array(model.exercises)
+        }
+        
+        let viewModel = dataProvider.createView(exercises: exercises)
         view?.setup(viewModel: viewModel)
     }
     
     func didSelectRow(type: NewDayViewModel.Row, index: Int) {
         switch type {
         case .exercise:
-            router.openActiveExerciseModule(with: Array(model.exercises)[index].id)
+            router.openActiveExerciseModule(with: Array(model!.exercises)[index].id)
         case .addExercise:
             self.view?.showAlertForInputExreciseName()
         }

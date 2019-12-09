@@ -82,7 +82,7 @@ final class PickerVC: UIViewController {
     private func setupBackgroundView() {
         backgroundView = UIView(frame: .zero)
         backgroundView.backgroundColor = .black
-        backgroundView.corner(backgroundView, angle: 16)
+        backgroundView.corner(angle: 16)
         self.view.addSubview(backgroundView)
         
         backgroundView.snp.makeConstraints { (make) in
@@ -140,7 +140,7 @@ final class PickerVC: UIViewController {
         saveButton.setTitleColor(#colorLiteral(red: 0, green: 1, blue: 0.6078431373, alpha: 1), for: .normal)
         saveButton.titleLabel?.font = saveButton.titleLabel?.font.withSize(16)
         saveButton.addTarget(self, action: #selector(saveButtonIsClicked), for: .touchUpInside)
-        backgroundView.corner(saveButton, angle: 8)
+        saveButton.corner(angle: 8)
         
         backgroundView.addSubview(saveButton)
         

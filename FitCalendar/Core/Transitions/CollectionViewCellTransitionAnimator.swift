@@ -30,7 +30,7 @@ final class CollectionViewCellTransitionAnimator: NSObject, UIViewControllerAnim
         }
         
         let finalFrame = transitionContext.finalFrame(for: presentedViewController)
-        let startCellFrame = startTransitionCell.convert(startTransitionCell.bounds, to: containerView)
+        let startCellFrame = startTransitionCell.convert(startTransitionCell.frame, to: containerView)
         let startCellCenter = CGPoint(x: startCellFrame.midX, y: startCellFrame.midY)
         
         let cicleView = createCicrleView(view: presentedView)
@@ -44,6 +44,8 @@ final class CollectionViewCellTransitionAnimator: NSObject, UIViewControllerAnim
         cicleView.center = presentedView.center
         cicleView.transform = CGAffineTransform(scaleX: 0.05, y: 0.05)
         
+        presentedViewController.navigationController?.navigationBar.alpha = 0
+        
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
             presentedView.transform = CGAffineTransform(scaleX: 1, y: 1)
             presentedView.frame = finalFrame
@@ -52,8 +54,15 @@ final class CollectionViewCellTransitionAnimator: NSObject, UIViewControllerAnim
             cicleView.transform = CGAffineTransform(scaleX: 1, y: 1)
             cicleView.center = presentedView.center
             
+            sourceView.alpha = 0
+            
         }) { (finished) in
             transitionContext.completeTransition(finished)
+            sourceView.alpha = 1.0
+        }
+        
+        UIView.animate(withDuration: 0.7) {
+            presentedViewController.navigationController?.navigationBar.alpha = 1
         }
         
     }

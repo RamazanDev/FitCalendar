@@ -20,6 +20,7 @@ final class TextWithArrowCell: UITableViewCell {
      override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
+        setupBottomSeparatorView()
         setupArrowImageView()
         setupTitleLabel()
     }
@@ -66,6 +67,20 @@ final class TextWithArrowCell: UITableViewCell {
             make.left.equalToSuperview().offset(16)
             make.right.equalTo(arrowImageView).offset(8)
         }
+    }
+    
+    private func setupBottomSeparatorView() {
+        let separatorView = UIView(frame: .zero)
+        separatorView.backgroundColor = #colorLiteral(red: 0.2156862745, green: 0.2156862745, blue: 0.2156862745, alpha: 1)
+        self.addSubview(separatorView)
+        
+        separatorView.snp.makeConstraints { (make) in
+            make.height.equalTo(0.3)
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview()
+        }
+        
     }
     
 }

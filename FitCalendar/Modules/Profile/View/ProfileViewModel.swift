@@ -12,6 +12,14 @@ struct ProfileViewModel {
     
     enum Row {
         
+        case allExercises(CellConfigurator)
+        case records(CellConfigurator)
+        case statisticsOfVisitings(CellConfigurator)
+        case separator(CellConfigurator)
+        case parametersOfBody(CellConfigurator)
+        case settings(CellConfigurator)
+        case userInfo(CellConfigurator)
+        
         var identifier: String {
             return type(of: configurator).reuseId
         }
@@ -19,6 +27,13 @@ struct ProfileViewModel {
         var configurator: CellConfigurator {
             
             switch self {
+            case .allExercises(let config):             return config
+            case .records(let config):                  return config
+            case .separator(let config):                return config
+            case .statisticsOfVisitings(let config):    return config
+            case .parametersOfBody(let config):         return config
+            case .settings(let config):                 return config
+            case .userInfo(let config):                 return config
                 
             }
             

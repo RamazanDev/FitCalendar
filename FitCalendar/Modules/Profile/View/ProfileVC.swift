@@ -40,10 +40,20 @@ final class ProfileVC: UIViewController {
     private func setupView() {
         self.title = "Профиль"
         self.navigationItem.largeTitleDisplayMode = .always
+        
+        let navBar = navigationController?.navigationBar
+        navBar?.prefersLargeTitles = true
     }
     
     private func setupTableView() {
         tableView = UITableView(frame: .zero)
+        tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
+        
+        tableView.register(TextWithArrowCell.self, forCellReuseIdentifier: "TextWithArrowCell")
+        tableView.register(SeparatorTableViewCell.self, forCellReuseIdentifier: "SeparatorTableViewCell")
+        tableView.register(ProfileUserInfoCell.self, forCellReuseIdentifier: "ProfileUserInfoCell")
+        
         self.view.addSubview(tableView)
         
         tableView.dataSource = self

@@ -21,6 +21,7 @@ final class MainCalendarVC: UIViewController {
     
     // MARK: - Private properties
     private var selectedCell: UICollectionViewCell!
+    private var selectedCellType: MainCalendarViewModel.Row!
     
     private var viewModel: MainCalendarViewModel?
     
@@ -39,7 +40,7 @@ final class MainCalendarVC: UIViewController {
     // MARK: - Setup view funcs
     
     private func setupView() {
-        self.navigationController?.delegate = self
+//        self.navigationController?.delegate = self
         
         let date = Date()
         self.title = date.stringValueFullWithTime()
@@ -75,6 +76,7 @@ extension MainCalendarVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let row = viewModel?.rows[indexPath.row] else {return }
         selectedCell = collectionView.dequeueReusableCell(withReuseIdentifier: row.identifier, for: indexPath)
+        selectedCellType = row
         self.presenter?.didSelectRow(rowType: self.viewModel!.rows[indexPath.row], index: indexPath.row)
     }
 }
@@ -120,17 +122,22 @@ extension MainCalendarVC: UICollectionViewDelegateFlowLayout {
 }
 
 // MARK: - UINavigationControllerDelegate
-
-extension MainCalendarVC: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        switch operation {
-        case .push:
-            return CollectionViewCellTransitionAnimator(startTransitionCell: selectedCell)
-        default:
-            return nil
-        }
-    }
-}
+//
+//extension MainCalendarVC: UINavigationControllerDelegate {
+//    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        switch operation {
+//        case .push:
+//            switch selectedCellType {
+//            case .simpleDay:
+//                return CollectionViewCellTransitionAnimator(startTransitionCell: selectedCell)
+//            default:
+//                return nil
+//            }
+//        default:
+//            return nil
+//        }
+//    }
+//}
 
 // MARK: - MainCalendarViewInput
 
