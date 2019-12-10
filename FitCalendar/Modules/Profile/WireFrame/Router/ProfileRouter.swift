@@ -25,5 +25,9 @@ final class ProfileRouter {
 // MARK: - ProfileRouterInput
 
 extension ProfileRouter: ProfileRouterInput {
+    func openMuscleGroupsModule() {
+        let vc = MuscleGroupsAssembly.assembly()
+        transition?.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }

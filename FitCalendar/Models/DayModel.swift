@@ -18,7 +18,7 @@ final class DayModel: Object {
         self.date = date
         
         if exercises != nil {
-        self.exercises = exercises!
+            self.exercises = exercises!
         }
         
     }

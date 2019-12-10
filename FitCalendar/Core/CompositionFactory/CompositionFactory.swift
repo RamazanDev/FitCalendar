@@ -21,4 +21,10 @@ final class CompositionFactory: DependencyFactory {
             return CoreFactory()
         })
     }
+    
+    var resources: ResourcesFactory {
+        return weakShared(factory: {
+            return ResourcesFactory()
+        })
+    }
 }

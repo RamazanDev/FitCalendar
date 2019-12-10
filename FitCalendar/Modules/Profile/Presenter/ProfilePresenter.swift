@@ -35,6 +35,8 @@ extension ProfilePresenter: ProfileViewOutput {
     
     func didSelectRow(type: ProfileViewModel.Row) {
         switch type {
+        case .allExercises:
+            router.openMuscleGroupsModule()
         default:
             break
         }
