@@ -26,11 +26,20 @@ final class MuscleGroupsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         setupCollectionView()
         presenter?.viewIsReady()
     }
     
     // MARK: - Setup view funcs
+    
+    private func setupView() {
+        self.title = "Мышечные группы"
+        self.navigationItem.largeTitleDisplayMode = .always
+        
+        let navBar = navigationController?.navigationBar
+        navBar?.prefersLargeTitles = true
+    }
     
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -55,6 +64,10 @@ final class MuscleGroupsVC: UIViewController {
 // MARK: - UICollectionViewDelegate
 
 extension MuscleGroupsVC: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.didSelectRow(index: indexPath.row)
+    }
     
 }
 
@@ -107,7 +120,8 @@ extension MuscleGroupsVC: MuscleGroupsInput {
     }
     
     func openExercisesModule(title: String) {
-        print(title)
+        let vc = MuscleGroupExercisesAssembly.assembly()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

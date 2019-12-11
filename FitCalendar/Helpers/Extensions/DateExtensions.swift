@@ -5,6 +5,7 @@
 //  Created by Магомедов Рамазан on 25.11.2019.
 //  Copyright © 2019 Магомедов Рамазан. All rights reserved.
 //
+
 import Foundation
 
 extension Date {
@@ -15,4 +16,5 @@ extension Date {
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: self).capitalizingFirstLetter()
     }
+    
 }

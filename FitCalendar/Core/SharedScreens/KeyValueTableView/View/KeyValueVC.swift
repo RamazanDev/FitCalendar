@@ -47,7 +47,7 @@ final class KeyValueVC: UIViewController {
         tableView.dataSource = self
         tableView.backgroundColor = .clear
         tableView.tableFooterView = UIView()
-        tableView.register(TextWithArrowCell.self, forCellReuseIdentifier: "KeyValueCell")
+        tableView.register(KeyValueCell.self, forCellReuseIdentifier: "KeyValueCell")
         
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()

@@ -15,7 +15,9 @@ extension UIView {
         self.clipsToBounds = true
     }
     
-    func addShadow(radius: CGFloat = 5, offset: CGSize = CGSize(width: 0, height: 8), color: CGColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)) {
+    func addShadow(radius: CGFloat = 5,
+                   offset: CGSize = CGSize(width: 0, height: 8),
+                   color: CGColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)) {
         layer.masksToBounds = false
         layer.shadowRadius = radius
         layer.shadowOffset = CGSize(width: 0, height: 8)
@@ -23,11 +25,4 @@ extension UIView {
         layer.shadowOpacity = 0.05
     }
     
-}
-
-extension Sequence where Iterator.Element: UIView {
-  func corner<T: UIView>(_ sender: T, angle: CGFloat) {
-        sender.layer.cornerRadius = angle
-        sender.clipsToBounds = true
-    }
 }

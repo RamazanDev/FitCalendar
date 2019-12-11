@@ -30,6 +30,7 @@ final class MuscleGroupCell: UICollectionViewCell {
     private func setupImageView() {
         imageView = UIImageView(frame: .zero)
         imageView.corner(angle: 6)
+        imageView.contentMode = .scaleAspectFit
         self.addSubview(imageView)
         
         imageView.snp.makeConstraints { (make) in
@@ -39,13 +40,19 @@ final class MuscleGroupCell: UICollectionViewCell {
     
     private func setupNameLabel() {
         nameLabel = UILabel(frame: .zero)
-        nameLabel.font = nameLabel.font.withSize(14)
+        nameLabel.font = nameLabel.font.withSize(24)
         nameLabel.textColor = .white
         nameLabel.numberOfLines = 0
+
+        nameLabel.layer.shadowColor = UIColor.black.cgColor
+        nameLabel.layer.shadowRadius = 8.0
+        nameLabel.layer.shadowOpacity = 1.0
+        nameLabel.layer.shadowOffset = CGSize(width: 4, height: 4)
+        nameLabel.layer.masksToBounds = false
         self.addSubview(nameLabel)
         
         nameLabel.snp.makeConstraints { (make) in
-            make.bottom.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview().offset(-8)
             make.left.equalToSuperview().offset(4)
             make.right.equalToSuperview().offset(-4)
             make.top.greaterThanOrEqualTo(16)

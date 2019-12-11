@@ -7,6 +7,7 @@
 //
 
 extension String {
+    
     func capitalizingFirstLetter() -> String {
         return prefix(1).capitalized + dropFirst()
     }
@@ -18,6 +19,7 @@ extension String {
 }
 
 extension RangeReplaceableCollection where Self: StringProtocol {
+    
     var digits: Self {
         return filter({ $0.isNumber })
     }
@@ -25,4 +27,5 @@ extension RangeReplaceableCollection where Self: StringProtocol {
     mutating func removeAllNonNumeric() {
         removeAll { !$0.isNumber }
     }
+    
 }

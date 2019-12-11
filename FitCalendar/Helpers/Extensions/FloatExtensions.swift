@@ -9,7 +9,9 @@
 import Foundation
 
 extension Float {
+    
     func preparingForShowIntOrFloatDescription() -> String {
         return floor(self) == self ? Int(self).description : self.description
     }
+    
 }

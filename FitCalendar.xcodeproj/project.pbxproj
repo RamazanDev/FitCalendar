@@ -27,6 +27,11 @@
 		4D392DAD239E8A8A00521B5E /* MuscleGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392DAC239E8A8A00521B5E /* MuscleGroupModel.swift */; };
 		4D392DB0239E8BCE00521B5E /* MuscleGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392DAF239E8BCE00521B5E /* MuscleGroupCell.swift */; };
 		4D392DB3239E8FD900521B5E /* ResourcesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392DB2239E8FD900521B5E /* ResourcesFactory.swift */; };
+		4D392DC323A120AA00521B5E /* MuscleGroupExercisesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392DC223A120AA00521B5E /* MuscleGroupExercisesVC.swift */; };
+		4D392DC523A120B900521B5E /* MuscleGroupExercisesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392DC423A120B900521B5E /* MuscleGroupExercisesViewInput.swift */; };
+		4D392DC723A120C600521B5E /* MuscleGroupExercisesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392DC623A120C600521B5E /* MuscleGroupExercisesPresenter.swift */; };
+		4D392DC923A120D000521B5E /* MuscleGroupExercisesViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392DC823A120D000521B5E /* MuscleGroupExercisesViewOutput.swift */; };
+		4D392DCB23A1224300521B5E /* MuscleGroupExercisesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D392DCA23A1224300521B5E /* MuscleGroupExercisesAssembly.swift */; };
 		4D5B7BCD238A4280007039E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B7BCC238A4280007039E7 /* AppDelegate.swift */; };
 		4D5B7BCF238A4280007039E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B7BCE238A4280007039E7 /* SceneDelegate.swift */; };
 		4D5B7BD4238A4280007039E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B7BD2238A4280007039E7 /* Main.storyboard */; };
@@ -115,6 +120,11 @@
 		4D392DAC239E8A8A00521B5E /* MuscleGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroupModel.swift; sourceTree = "<group>"; };
 		4D392DAF239E8BCE00521B5E /* MuscleGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroupCell.swift; sourceTree = "<group>"; };
 		4D392DB2239E8FD900521B5E /* ResourcesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesFactory.swift; sourceTree = "<group>"; };
+		4D392DC223A120AA00521B5E /* MuscleGroupExercisesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroupExercisesVC.swift; sourceTree = "<group>"; };
+		4D392DC423A120B900521B5E /* MuscleGroupExercisesViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroupExercisesViewInput.swift; sourceTree = "<group>"; };
+		4D392DC623A120C600521B5E /* MuscleGroupExercisesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroupExercisesPresenter.swift; sourceTree = "<group>"; };
+		4D392DC823A120D000521B5E /* MuscleGroupExercisesViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroupExercisesViewOutput.swift; sourceTree = "<group>"; };
+		4D392DCA23A1224300521B5E /* MuscleGroupExercisesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroupExercisesAssembly.swift; sourceTree = "<group>"; };
 		4D5B7BC9238A4280007039E7 /* FitCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D5B7BCC238A4280007039E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D5B7BCE238A4280007039E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -368,6 +378,57 @@
 			path = SystemFactory;
 			sourceTree = "<group>";
 		};
+		4D392DBB23A100FE00521B5E /* NewExercise */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewExercise;
+			sourceTree = "<group>";
+		};
+		4D392DBC23A1200000521B5E /* MuscleGroupExercises */ = {
+			isa = PBXGroup;
+			children = (
+				4D392DBF23A1202300521B5E /* WireFrame */,
+				4D392DBE23A1201E00521B5E /* Presenter */,
+				4D392DBD23A1201900521B5E /* View */,
+			);
+			path = MuscleGroupExercises;
+			sourceTree = "<group>";
+		};
+		4D392DBD23A1201900521B5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D392DC223A120AA00521B5E /* MuscleGroupExercisesVC.swift */,
+				4D392DC423A120B900521B5E /* MuscleGroupExercisesViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D392DBE23A1201E00521B5E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4D392DC623A120C600521B5E /* MuscleGroupExercisesPresenter.swift */,
+				4D392DC823A120D000521B5E /* MuscleGroupExercisesViewOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4D392DBF23A1202300521B5E /* WireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				4D392DC023A1202D00521B5E /* Assembly */,
+			);
+			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		4D392DC023A1202D00521B5E /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				4D392DCA23A1224300521B5E /* MuscleGroupExercisesAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
 		4D5B7BC0238A4280007039E7 = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +641,8 @@
 		4D5B7C60238E9C7B007039E7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4D392DBC23A1200000521B5E /* MuscleGroupExercises */,
+				4D392DBB23A100FE00521B5E /* NewExercise */,
 				4D392D95239E5F3000521B5E /* MuscleGroups */,
 				4D392D8F239D7BB800521B5E /* AllExercises */,
 				4D687AA723917C93000A1AFA /* ActiveExercise */,
@@ -1061,8 +1124,10 @@
 				4D5B7C8223900C59007039E7 /* ProfileVC.swift in Sources */,
 				4D392DB0239E8BCE00521B5E /* MuscleGroupCell.swift in Sources */,
 				4D392D74239B948E00521B5E /* UIViewExtensions.swift in Sources */,
+				4D392DCB23A1224300521B5E /* MuscleGroupExercisesAssembly.swift in Sources */,
 				4D5B7BCD238A4280007039E7 /* AppDelegate.swift in Sources */,
 				4D5B7C9123900F5D007039E7 /* ProfileDataConverterInput.swift in Sources */,
+				4D392DC323A120AA00521B5E /* MuscleGroupExercisesVC.swift in Sources */,
 				4D5B7CA623901865007039E7 /* NewDayDataConverter.swift in Sources */,
 				4D5B7C4F238E4A3E007039E7 /* AddTraningDayCollectionCell.swift in Sources */,
 				4D5B7C56238E67F1007039E7 /* TableCellConfigurator.swift in Sources */,
@@ -1078,18 +1143,21 @@
 				4D392D8D239D34AC00521B5E /* CollectionViewCellTransitionAnimator.swift in Sources */,
 				4D5B7C4A238D8BC1007039E7 /* MainCalendarRouterInput.swift in Sources */,
 				4D5B7C48238D8BB4007039E7 /* MainCalendarRouter.swift in Sources */,
+				4D392DC723A120C600521B5E /* MuscleGroupExercisesPresenter.swift in Sources */,
 				4D5B7C44238D8B97007039E7 /* MainCalendarPresenter.swift in Sources */,
 				4D5B7C9323900F7D007039E7 /* ProfileDataConverter.swift in Sources */,
 				4D5B7C40238D3ABF007039E7 /* ExerciseModel.swift in Sources */,
 				4D5B7C8923900DE8007039E7 /* ProfilePresenter.swift in Sources */,
 				4D5B7C5D238E6AB7007039E7 /* MainCalendarDataConverter.swift in Sources */,
 				4D687AA6239142F8000A1AFA /* KeyValue.swift in Sources */,
+				4D392DC523A120B900521B5E /* MuscleGroupExercisesViewInput.swift in Sources */,
 				4D5B7BCF238A4280007039E7 /* SceneDelegate.swift in Sources */,
 				4D5B7C21238B82F9007039E7 /* MainCalendarAssembly.swift in Sources */,
 				4D687AB423917E5F000A1AFA /* ActiveExerciseViewOutput.swift in Sources */,
 				4D5B7CB7239025D0007039E7 /* TextWithArrowCell.swift in Sources */,
 				4D392DA3239E897D00521B5E /* MuscleGroupsPresenter.swift in Sources */,
 				4D5B7C6E238EAFFD007039E7 /* MainTabBarAssembly.swift in Sources */,
+				4D392DC923A120D000521B5E /* MuscleGroupExercisesViewOutput.swift in Sources */,
 				4D687ABA2393D1E8000A1AFA /* ActiveExerciseTableDataSource.swift in Sources */,
 				4D5B7C9F23901802007039E7 /* NewDayViewModel.swift in Sources */,
 				4D5B7C15238A9C46007039E7 /* MainCalendarVC.swift in Sources */,
