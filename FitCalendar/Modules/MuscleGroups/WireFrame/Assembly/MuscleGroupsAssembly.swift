@@ -11,12 +11,15 @@ import UIKit
 final class MuscleGroupsAssembly {
     static func assembly() -> UIViewController {
         let vc = MuscleGroupsVC()
+        let nav = UINavigationController()
+        nav.viewControllers = [vc]
+               
         let resourcesFactory = CompositionFactory.shared.resources
         let presenter = MuscleGroupsPresenter(resourcesFactory: resourcesFactory)
         
         vc.presenter = presenter
         presenter.view = vc
         
-        return vc
+        return nav
     }
 }

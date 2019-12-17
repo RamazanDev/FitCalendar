@@ -8,5 +8,5 @@
 
 protocol MuscleGroupsInput: class {
     func setup(groups: [MuscleGroupModel])
-    func openExercisesModule(title: String)
+    func openExercisesModule(model: MuscleGroupModel)
 }

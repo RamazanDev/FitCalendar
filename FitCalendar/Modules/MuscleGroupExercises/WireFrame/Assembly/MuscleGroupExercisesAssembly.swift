@@ -9,11 +9,10 @@
 import UIKit
 
 final class MuscleGroupExercisesAssembly {
-    static func assembly() -> UIViewController {
+    static func assembly(model: MuscleGroupModel) -> UIViewController {
         let vc = MuscleGroupExercisesVC()
-        vc.title = "Бицепс"
         let coreFactory = CompositionFactory.shared.core
-        let presenter = MuscleGroupExercisesPresenter(coreService: coreFactory)
+        let presenter = MuscleGroupExercisesPresenter(muscleGroup: model, coreService: coreFactory)
         
         vc.presenter = presenter
         presenter.view = vc

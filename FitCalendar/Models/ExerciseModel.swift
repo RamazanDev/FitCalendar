@@ -11,7 +11,8 @@ import RealmSwift
 final class ExerciseModel: Object {
     @objc dynamic var id = UUID().uuidString
     @objc dynamic var name: String = ""
-    @objc dynamic var result: ExrciceResultModel? = nil
+    @objc dynamic var muscleGroupID: String = ""
+    var result = List<ExrciceResultModel>()
     
     override class func primaryKey() -> String? {
         return "id"

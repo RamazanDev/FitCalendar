@@ -7,5 +7,7 @@
 //
 
 protocol MuscleGroupExercisesViewInput: class {
+    func setTitle(_ title: String)
     func setup(exerciseTitles: [String])
+    func showAlertForInputExreciseName()
 }

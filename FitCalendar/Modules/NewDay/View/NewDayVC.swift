@@ -116,24 +116,4 @@ extension NewDayVC: NewDayViewInput {
         self.tableView.reloadSections(sections as IndexSet, with: .fade)
     }
     
-    func showAlertForInputExreciseName() {
-        let alert = UIAlertController.init(title: "Название упражнения", message: nil, preferredStyle: .alert)
-        alert.addTextField { (textField) in}
-        
-        let saveAction = UIAlertAction.init(title: "Добавить", style: .default) { (action) in
-            if let text = alert.textFields?.first?.text {
-                if text != "" {
-                    self.presenter?.addExercise(with: text.capitalizingFirstLetter())
-                }
-            }
-        }
-        
-        let cancelAction = UIAlertAction.init(title: "Назад", style: .destructive)
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
 }

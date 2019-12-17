@@ -9,10 +9,12 @@
 import UIKit
 
 final class MuscleGroupModel {
+    let id: String
     let image: UIImage
     let name: String
     
-    init(image: UIImage, name: String) {
+    init(id: String, image: UIImage, name: String) {
+        self.id = id
         self.image = image
         self.name = name
     }

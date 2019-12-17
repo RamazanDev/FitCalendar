@@ -80,7 +80,7 @@ extension NewDayPresenter: NewDayViewOutput {
         case .exercise:
             router.openActiveExerciseModule(with: Array(model!.exercises)[index].id)
         case .addExercise:
-            self.view?.showAlertForInputExreciseName()
+            break
         }
     }
 }

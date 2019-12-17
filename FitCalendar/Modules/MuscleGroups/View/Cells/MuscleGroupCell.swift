@@ -34,13 +34,15 @@ final class MuscleGroupCell: UICollectionViewCell {
         self.addSubview(imageView)
         
         imageView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.7)
+            make.width.equalToSuperview().multipliedBy(0.7)
+            make.center.equalToSuperview()
         }
     }
     
     private func setupNameLabel() {
         nameLabel = UILabel(frame: .zero)
-        nameLabel.font = nameLabel.font.withSize(24)
+        nameLabel.font = nameLabel.font.withSize(18)
         nameLabel.textColor = .white
         nameLabel.numberOfLines = 0
 

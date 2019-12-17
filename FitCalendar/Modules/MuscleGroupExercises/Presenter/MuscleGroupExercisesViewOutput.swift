@@ -11,4 +11,5 @@ protocol MuscleGroupExercisesViewOutput {
     func didSelectRow(index: Int)
     func plusButtonIsClicked()
     func removeAction(index: Int)
+    func addExercise(with name: String)
 }

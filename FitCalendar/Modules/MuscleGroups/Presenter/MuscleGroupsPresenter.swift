@@ -35,7 +35,7 @@ extension MuscleGroupsPresenter: MuscleGroupsOutput {
     }
     
     func didSelectRow(index: Int) {
-        view?.openExercisesModule(title: groups[index].name)
+        view?.openExercisesModule(model: groups[index])
     }
     
 }

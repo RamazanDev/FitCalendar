@@ -6,6 +6,8 @@
 //  Copyright © 2019 Магомедов Рамазан. All rights reserved.
 //
 
+import Foundation
+
 final class ProfilePresenter {
     
     // MARK: - Public properties
@@ -34,11 +36,14 @@ extension ProfilePresenter: ProfileViewOutput {
     }
     
     func didSelectRow(type: ProfileViewModel.Row) {
-        switch type {
-        case .allExercises:
-            router.openMuscleGroupsModule()
-        default:
-            break
+        DispatchQueue.main.async {
+            switch type {
+            case .allExercises:
+                self.router.openMuscleGroupsModule()
+            default:
+                break
+            }
         }
+        
     }
 }

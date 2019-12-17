@@ -31,14 +31,17 @@ final class MuscleGroupsVC: UIViewController {
         presenter?.viewIsReady()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let navBar = navigationController?.navigationBar
+        navBar?.prefersLargeTitles = false
+    }
+    
     // MARK: - Setup view funcs
     
     private func setupView() {
-        self.title = "Мышечные группы"
-        self.navigationItem.largeTitleDisplayMode = .always
-        
-        let navBar = navigationController?.navigationBar
-        navBar?.prefersLargeTitles = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(dismissView))
+        self.title = "Выберите мышечную группу"
     }
     
     private func setupCollectionView() {
@@ -57,6 +60,12 @@ final class MuscleGroupsVC: UIViewController {
             make.edges.equalTo(self.view)
         }
         
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func dismissView() {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
@@ -119,8 +128,8 @@ extension MuscleGroupsVC: MuscleGroupsInput {
         collectionView.reloadData()
     }
     
-    func openExercisesModule(title: String) {
-        let vc = MuscleGroupExercisesAssembly.assembly()
+    func openExercisesModule(model: MuscleGroupModel) {
+        let vc = MuscleGroupExercisesAssembly.assembly(model: model)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

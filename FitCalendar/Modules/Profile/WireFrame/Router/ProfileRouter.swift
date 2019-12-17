@@ -27,7 +27,8 @@ final class ProfileRouter {
 extension ProfileRouter: ProfileRouterInput {
     func openMuscleGroupsModule() {
         let vc = MuscleGroupsAssembly.assembly()
-        transition?.navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        transition?.navigationController?.present(vc, animated: true)
     }
     
 }
